@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+TESTE FRONT END REACT
+CENÁRIO 1 – FRONT END
+ A equipe recebeu uma demanda para desenvolver um front-end para uma API RESTful. No cenário proposto, a interface deve exibir posts de um blog com paginação tendo o limite de 4 registros por vez. E  ao clicar em um post os comentários associados devem ser exibidos, também deve conter uma interface para exibir todos os usuários contendo paginação  com limite de 4 registros por vez e ao clicar em um usuário deve  exibir os detalhes dele.  O layout das interfaces deve ser de fácil visualização e utilizar cores claras e agradáveis fique a vontade para escolher uma tema dentro dessas características.
+SUA TAREFA 
+Você ficou responsável pela demanda e sua tarefa é projetar uma interface para atender as necessidades. 
+Os seguintes serviços estão disponíveis: 
+● Listagem de posts: 
+o https://jsonplaceholder.typicode.com/posts 
+● Listagem de comentários de um post:
+ o https://jsonplaceholder.typicode.com/posts/[ID]/comments 
+● Listagem de usuários: 
+o https://jsonplaceholder.typicode.com/users 
+● Detalhes de um usuário: 
+o https://jsonplaceholder.typicode.com/users/[ID] 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AVALIAÇÃO TÉCNICA DA DEMANDA 
+Os seguintes itens serão utilizados para avaliação técnica da demanda: 
+1. Funcionamento da solução. 
+2. Organização do código (tipos de projetos, diretórios, nome dos arquivos, etc...). 
+3. Organização do repositório no GitHub. 
+4. Coerência com a tarefa proposta. 
+5. Usabilidade.
+ 6. Responsividade. 
+7. Uso de tecnologias/frameworks de mercado. 
+CENÁRIO 2 – FRONT END 
+Crie um app em react-native para a mesma aplicação.
 
-## Available Scripts
 
-In the project directory, you can run:
+INFORMAÇÕES ADICIONAIS 
+    1. Você deverá utilizar o GitHub como repositório para seu código. 
+    2. Nenhum código armazenado no computador local será utilizado para avaliação. a. O tempo gasto para concluir a atividade será a diferença entre a criação do repositório e o último commit. 
+    3. Ao finalizar o teste envie um e-mail com a URL do repositório da solução para os emails no fim das orientações. 
+    4. Esteja livre para realizar pesquisas na internet, entretanto caso você não tenha familiaridade com algo requerido no teste não gaste tempo com a atividade. a. O teste precisa demonstrar o que você conhece efetivamente. 
+    5. Lembre-se que o projeto será clonado do repositório para avaliação e execução. Deixe todas as instruções necessárias para a execução do código no arquivo README.md. Em caso de problemas, a avaliação será prejudicada. 
+    6. O nosso objetivo é selecionar profissionais capazes e que consigam entregar soluções profissionais utilizando o que o mercado apresenta de melhor. Sendo assim, demonstre seu conhecimento nos pontos que achar necessário. 
+    7. Utilize comentários no código caso queira ressaltar algo. 
+    8. Caso julgue interessante acrescentar alguma funcionalidade não solicitada, 
+    9. mas que vá demonstrar algum conhecimento e que agregue fique à vontade, entretanto não se preocupe em demonstrar tudo o que você conhece. 
+    10. Nosso objetivo é entender se você tem condições de receber um conjunto de serviços e projetar uma interface usual
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O projeto deve estar no seu GitHub pessoal (Privado), e nos compartilhe o repositório com os e-mails para avaliação.
+cesar.macedo@sysmap.com.br  – cesarmacedosysmap 
+flavio.carmo@sysmap.com.br – flaviodaniel
+governanca.sistemas@sysmap.com.br - 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gestor da área (Breno): 3199234-0946 - WhatsApp
+*Caso não conclua o desafio envie até onde conseguiu fazer.

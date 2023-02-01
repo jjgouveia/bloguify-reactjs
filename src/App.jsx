@@ -1,11 +1,10 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.css';
 
-function App() {
+function App () {
   return (
-    <h1>
-      Hey soul sister! 🎶
-    </h1>
+    <Outlet />
   );
 }
 
