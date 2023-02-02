@@ -1,19 +1,18 @@
 import { Pagination, Stack } from '@mui/material';
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
 
 export default function Home () {
 
-  const { posts, fetchPosts } = usePosts(4);
+  const { posts, fetchPosts, total } = usePosts(4);
   const { actualPage, setActualPage } = usePagination();
-  const location = useLocation();
 
   const handler = ({ target }, value) => {
-    console.log(location.search.split('=', 2)[1])
     setActualPage(value);
   }
+
+ const countPagination = Number(Math.ceil(total.length / 4));
 
   useEffect(() => {
     fetchPosts(actualPage);
@@ -31,13 +30,12 @@ export default function Home () {
       }
       <Stack spacing={2}>
       <Pagination
-      count={25}
+      count={countPagination || 1}
       page={ actualPage }
       onChange={ handler }
       variant="outlined"
       color="primary"
       showFirstButton showLastButton
-      defaultValue={ actualPage }
       />
     </Stack>
     </section>
