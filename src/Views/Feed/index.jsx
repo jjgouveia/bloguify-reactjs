@@ -1,4 +1,6 @@
+import { Pagination, Stack } from '@mui/material';
 import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
 
@@ -6,12 +8,16 @@ export default function Home () {
 
   const { posts, fetchPosts } = usePosts(4);
   const { actualPage, setActualPage } = usePagination();
+  const location = useLocation();
+
+  const handler = ({ target }, value) => {
+    console.log(location.search.split('=', 2)[1])
+    setActualPage(value);
+  }
 
   useEffect(() => {
     fetchPosts(actualPage);
   }, [actualPage]);
-
-  console.log(posts);
 
   return (
     <section className='blog-posts-container'>
@@ -23,18 +29,17 @@ export default function Home () {
           </div>
         ))
       }
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-      {
-        Array(25).fill('').map((_, index) => {
-          return <button
-          key={ index }
-          disabled={ index === actualPage -1 }
-          onClick={ () => setActualPage(index+1) }>
-            { index + 1 }
-          </button>
-        })
-      }
-      </div>
+      <Stack spacing={2}>
+      <Pagination
+      count={25}
+      page={ actualPage }
+      onChange={ handler }
+      variant="outlined"
+      color="primary"
+      showFirstButton showLastButton
+      defaultValue={ actualPage }
+      />
+    </Stack>
     </section>
   )
 }
