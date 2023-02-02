@@ -38,7 +38,13 @@ export default function CommentModal (props) {
 
     return (
         <div>
-            <Button onClick={handleOpen}>Exibir comentários 📝</Button>
+            <Button onClick={handleOpen}>Exibir comentários <lord-icon
+                src="https://cdn.lordicon.com/kjkiqtxg.json"
+                trigger="hover"
+                colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
+                stroke="30"
+                style={{ width: "32px", height: "32px" }}>
+            </lord-icon></Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
@@ -52,9 +58,17 @@ export default function CommentModal (props) {
             >
                 <Fade in={open}>
                     <Box sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Comentários 🗣️
-                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Typography id="transition-modal-title" variant="h6" component="h2">
+                                Comentários  </Typography> <lord-icon
+                                    src="https://cdn.lordicon.com/kjkiqtxg.json"
+                                    trigger="hover"
+                                    colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
+                                    stroke="30"
+                                    style={{ width: "48px", height: "48px" }}>
+                            </lord-icon>
+                        </Box>
+
                         <Box sx={{ maxHeight: '350px', overflowY: 'scroll' }}>
                             {
                                 comments.map((comment) => (

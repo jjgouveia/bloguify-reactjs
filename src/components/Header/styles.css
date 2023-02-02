@@ -1,0 +1,23 @@
+.header-wrapper {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.header-wrapper div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-label {
+    margin-top: -5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+header {
+    border-bottom: 1px solid rgb(176, 214, 255);
+}
