@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter, useRouteError } from "react-router-dom";
 import App from "../App";
-import ErrorPage from "../pages/ErrorPage";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
+import ErrorPage from "../Views/ErrorPage";
+import Home from "../Views/Feed";
+import Login from "../Views/Login";
 
 const router = createBrowserRouter([
     {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
       errorElement: <ErrorBoundary />,
       children: [
         { path: '/', element: <Login /> },
-        { path: '/home', element: <Home /> },
+        { path: '/feed', element: <Home /> },
       ],
     },
     { path: '/login', element: <Login /> },
