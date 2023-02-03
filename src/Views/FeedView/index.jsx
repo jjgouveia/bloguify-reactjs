@@ -1,6 +1,6 @@
-import { Pagination, Stack } from '@mui/material';
+import { Pagination, Skeleton, Stack } from '@mui/material';
 import React, { useEffect } from 'react'
-import CardComponent from '../../components/CardComponent';
+import PostCardComponent from '../../components/CardComponent';
 import Header from '../../components/Header';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
@@ -23,25 +23,31 @@ export default function HomeView () {
   return (
     <>
       <Header />
-      <section style={{ margin: '0 auto' }}>
-        {posts.map(({ id, title, body }) => (
-          <CardComponent
-          key={ id }
-          id={ id }
-          title={ title }
-          body={ body }/>
-        ))}
-        <Stack spacing={2}>
-          <Pagination
-            sx={{ margin: '0 auto', padding: '1rem .5em' }}
-            count={countPagination || 1}
-            page={actualPage}
-            onChange={handler}
-            variant="outlined"
-            color="primary"
-            showFirstButton showLastButton />
-        </Stack>
-      </section>
+      {
+        posts.length ? (
+          <section style={{ margin: '0 auto' }}>
+            {posts.map(({ id, title, body }) => (
+              <PostCardComponent
+                key={id}
+                id={id}
+                title={title}
+                body={body} />
+            ))}
+            <Stack spacing={2}>
+              <Pagination
+                sx={{ margin: '0 auto', padding: '1rem .5em' }}
+                count={countPagination || 1}
+                page={actualPage}
+                onChange={handler}
+                variant="outlined"
+                color="primary"
+                showFirstButton showLastButton />
+            </Stack>
+          </section>
+        ) : (
+          <Skeleton variant="rounded" sx={{ bgcolor: 'grey.50', margin: '0 auto', marginTop: '1rem' }} width={564} height={'100vh'} />
+        )
+      }
     </>
   )
 }

@@ -1,7 +1,8 @@
 import { Pagination, Stack } from '@mui/material';
+import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
-import CardComponent from '../../components/CardComponent';
 import Header from '../../components/Header';
+import UserCardComponent from '../../components/UserCardComponent';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
 
@@ -23,15 +24,12 @@ export default function UserView () {
   return (
     <>
       <Header />
-      <section style={{ margin: '0 auto' }}>
+      <section>
+        <Box sx={{ minHeight: '70vh', marginTop: '4rem' }}>
         {posts.map((user) => (
-          console.log(user)
-          // <CardComponent
-          // key={ id }
-          // id={ id }
-          // title={ title }
-          // body={ body }/>
+       <UserCardComponent key={ user.id } user={ user }/>
         ))}
+        </Box>
         <Stack spacing={2}>
           <Pagination
             sx={{ margin: '0 auto', padding: '1rem .5em' }}

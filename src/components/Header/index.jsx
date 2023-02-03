@@ -7,13 +7,15 @@ export default function Header () {
   return (
     <header>
       <div className='header-wrapper'>
-        <div className='logo-container'>
-          <Typography variant='h1' sx={{ fontSize: '32px' }}><lord-icon
+        <Link to='/feed' style={{ textDecoration: 'none'}}>
+          <div className='logo-container'>
+            <Typography variant='h1' sx={{ fontSize: '32px' }}><lord-icon
               src="https://cdn.lordicon.com/wfxpxmpk.json"
               trigger="hover"
               style={{ width: "56px", height: "56px" }}>
             </lord-icon> Lorem Blog</Typography>
-        </div>
+          </div>
+        </Link>
         <Link to='/users' style={{ textDecoration: 'none' }}>
           <div className='icon-wrapper'>
             <lord-icon
