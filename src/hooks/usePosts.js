@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getPosts } from "../services/feed.services";
 
-export default function usePosts(pageLimit) {
+export default function usePosts(type, pageLimit) {
     const [ posts, setPosts ] = useState([]);
     const [ total, setTotal ] = useState(0);
 
@@ -10,8 +10,8 @@ export default function usePosts(pageLimit) {
         ? 0
         : ((page - 1) * pageLimit);
         
-        setTotal(await getPosts(0));
-        const fetch = await getPosts(virtualPage, pageLimit);
+        setTotal(await getPosts(type, 0));
+        const fetch = await getPosts(type, virtualPage, pageLimit);
         setPosts(fetch);
     }
 
