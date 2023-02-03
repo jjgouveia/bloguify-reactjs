@@ -19,8 +19,10 @@ export default function Header () {
         <Link to='/users' style={{ textDecoration: 'none' }}>
           <div className='icon-wrapper'>
             <lord-icon
-              src="https://cdn.lordicon.com/dqxvvqzi.json"
-              trigger="hover"
+                src="https://cdn.lordicon.com/ajkxzzfb.json"
+                trigger="morph"
+                colors="primary:#ffc738,secondary:#4bb3fd"
+                state="morph-group"
               style={{ width: "42px", height: "42px" }}>
             </lord-icon>
             <p className='user-label'>Usuários</p>

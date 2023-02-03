@@ -13,7 +13,7 @@ export default function UserCardComponent ({ user }) {
           </Avatar>
         }
         title={user.name}
-        subheader={`user: ${user.username}`}
+        subheader={`👤: ${user.username}`}
       />
         <CardActions>
         <CommentModal isUser={ true }id={user.id} />
