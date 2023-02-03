@@ -4,6 +4,7 @@ import App from "../App";
 import ErrorPage from "../Views/ErrorPage";
 import Home from "../Views/Feed";
 import Login from "../Views/Login";
+import UserView from "../Views/User";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
       children: [
         { path: '/', element: <Login /> },
         { path: '/feed', element: <Home /> },
+        { path: '/users', element: <UserView /> },
       ],
     },
     { path: '/login', element: <Login /> },
