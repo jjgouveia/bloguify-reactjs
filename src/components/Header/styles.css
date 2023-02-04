@@ -3,38 +3,47 @@
     margin: 0 auto;
     justify-content: space-between;
     padding: 0 1rem;
-    height: 50px;
 }
 
-.header-wrapper div {
+.icon-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 52px;
+    padding: 0 .3rem;
+    transition: ease .5s;
+    margin-left: .1rem;
 }
 
 h1 {
-    min-width: 216px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .user-label {
-    margin-top: -8px;
+    position: absolute;
+    top: 26px;
     font-size: 12px;
+    color: rgb(25, 24, 24);
     text-decoration: none;
-    transition: .5s;
-    border-radius: 8px;
     padding: 0 .5rem;
 }
 
-.user-label:hover {
+.icon-wrapper:hover {
     background-color:  rgb(176, 214, 255);
+    border-radius: 14px;
+    padding-bottom: 3px;
 }
 
+button {
+    border: none;
+    background: none;
+}
 
-
-header {
-    border-bottom: 1px solid rgb(176, 214, 255);
+@media (width < 400px) {
+    h1 {
+        display: none;
+    }
 }

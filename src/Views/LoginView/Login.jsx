@@ -73,7 +73,7 @@ export default function LoginView () {
             backgroundPosition: 'center',
           }}
         />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} rounded>
           <Box
             sx={{
               my: 8,
@@ -147,14 +147,14 @@ export default function LoginView () {
                 Vamos lá!
               </Button>
               <Grid container>
-                <Grid item xs>
+                <Grid item={ false }>
                   <Link href="#" variant="body2">
                     Esqueceu a senha?
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Não tem uma conta? Vem cá!"}
+                    {"Não tem uma conta?"}
                   </Link>
                 </Grid>
               </Grid>
