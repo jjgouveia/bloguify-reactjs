@@ -1,4 +1,4 @@
-import { Pagination, Stack } from '@mui/material';
+import { Chip, Divider, Pagination, Stack } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect } from 'react'
 import Header from '../../components/Header';
@@ -24,7 +24,10 @@ export default function UserView () {
   return (
     <>
       <Header />
-      <section>
+      <Divider>
+        <Chip label="Usuários" />
+      </Divider>
+      <Box component='section'>
         <Box sx={{ minHeight: '70vh', marginTop: '4rem' }}>
         {posts.map((user) => (
        <UserCardComponent key={ user.id } user={ user }/>
@@ -38,9 +41,9 @@ export default function UserView () {
             onChange={handler}
             variant="outlined"
             color="primary"
-            showFirstButton showLastButton />
+           />
         </Stack>
-      </section>
+      </Box>
     </>
   )
 }

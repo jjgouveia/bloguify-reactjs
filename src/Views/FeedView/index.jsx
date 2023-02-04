@@ -1,4 +1,4 @@
-import { Pagination, Skeleton, Stack } from '@mui/material';
+import { Chip, Divider, Pagination, Skeleton, Stack } from '@mui/material';
 import React, { useEffect } from 'react'
 import PostCardComponent from '../../components/CardComponent';
 import Header from '../../components/Header';
@@ -23,6 +23,9 @@ export default function HomeView () {
   return (
     <>
       <Header />
+      <Divider>
+        <Chip label="Feed" />
+      </Divider>
       {
         posts.length ? (
           <section style={{ margin: '0 auto' }}>
@@ -33,6 +36,7 @@ export default function HomeView () {
                 title={title}
                 body={body} />
             ))}
+           <Divider variant="fullWidth" />
             <Stack spacing={2}>
               <Pagination
                 sx={{ margin: '0 auto', padding: '1rem .5em' }}
@@ -41,7 +45,7 @@ export default function HomeView () {
                 onChange={handler}
                 variant="outlined"
                 color="primary"
-                showFirstButton showLastButton />
+               />
             </Stack>
           </section>
         ) : (
