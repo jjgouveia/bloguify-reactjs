@@ -23,7 +23,7 @@ export default function HomeView () {
   return (
     <>
       <Header />
-      <Divider>
+      <Divider sx={{ marginTop: "2%" }}>
         <Chip label="Feed" />
       </Divider>
       {

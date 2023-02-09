@@ -116,8 +116,10 @@ export default function CommentModal (props) {
                         <Box sx={{ maxHeight: '350px', overflowY: 'scroll' }}>
                             {!props.isUser ?
                                 (comments.map((comment) => (
-                                    <Card key={comment.id} component="div" sx={{ maxWidth: 460, marginTop: '.5rem' }}>
+                                    <Card key={comment.id} component="div"
+                                    sx={{ maxWidth: 460, marginTop: '.5rem', bgcolor: 'background.paper', border: "1px solid #dadada" }}>
                                         <CardHeader
+                                        sx={{ bgcolor: '#fafafa' }}
                                             avatar={
                                                 <Avatar sx={{ bgcolor: '#7070F4' }} aria-label="user">
                                                     {comment.name[0].toUpperCase()}
@@ -130,14 +132,7 @@ export default function CommentModal (props) {
                                             <Typography variant="body2" color="text.secondary">
                                                 {comment.body}
                                             </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {comment.body}
-                                            </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {comment.body}
-                                            </Typography>
                                         </CardContent>
-
                                     </Card>
                                 ))
                                 ) : (users.map((user) => (

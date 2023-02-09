@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
+import logo from '../../assets/cafe.png';
 
 export default function Header () {
   const redirect = useNavigate();
@@ -15,13 +16,9 @@ export default function Header () {
     <header>
       <div className='header-wrapper'>
         <Link to='/feed' style={{ textDecoration: 'none' }}>
-          <Box className='logo-container' sx={{ display: 'flex' }}>
-          <lord-icon
-              src="https://cdn.lordicon.com/wfxpxmpk.json"
-              trigger="hover"
-              style={{ width: "56px", height: "56px" }}>
-            </lord-icon>
-            <Typography variant='h1' sx={{ fontSize: '32px' }}>Lorem Blog</Typography>
+          <Box className='logo-container' sx={{ display: 'flex', justifyContent: "center", alignItems: "center", paddingTop: "5%" }}>
+            <img src={ logo } alt="" width={ 32 } />
+            <Typography variant='h1' sx={{ fontSize: '32px', paddingLeft: "10%", fontFamily: "Source Sans Pro", fontWeight: "bold" }}>Bloguify</Typography>
           </Box>
         </Link>
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>

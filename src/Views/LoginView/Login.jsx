@@ -57,7 +57,7 @@ export default function LoginView () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
+      <Grid container component="main" sx={{ height: '100vh' }} color="#dadada">
         <CssBaseline />
         <Grid
           item
@@ -91,8 +91,11 @@ export default function LoginView () {
                 style={{ width: '56px', height: '56px' }}>
               </lord-icon>
             </Avatar>
-            <Typography component="h1" variant="h5">
-              Entrar no Lorem Blog
+            <Typography component="h1" variant="h5" sx={{ fontFamily: "Source Sans Pro", color: "#42A5F5", letterSpacing: 1 }}>
+              Bloguify
+            </Typography>
+            <Typography component="h4" variant="h5" sx={{ fontFamily: "Source Sans Pro" }}>
+              Seja quem você quiser ser
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
               <TextField
@@ -142,9 +145,9 @@ export default function LoginView () {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 2, mb: 2 }}
+                sx={{ mt: 2, mb: 2, backgroundColor: "#88abc2" }}
               >
-                Vamos lá!
+                Acesse 🚪
               </Button>
               <Grid container sx={{ textAlign: 'center' }}>
                 <Grid item xs={ 12 } m={1}>

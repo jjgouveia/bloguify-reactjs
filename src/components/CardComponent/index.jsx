@@ -5,8 +5,14 @@ import PropTypes from 'prop-types';
 
 export default function PostCardComponent({ title, body, id }) {
   return (
-    <Card sx={{ maxWidth: 500, margin: '0 auto', padding: '1rem 2rem', marginTop: '1rem', textAlign: 'justify', bgcolor: 'background.paper' }}>
+    <Card sx={{
+      maxWidth: 500,
+      margin: '0 auto',
+      padding: '1rem 2rem', marginTop: '1rem', textAlign: 'justify', bgcolor: 'background.paper', border: "1px solid #dadada" }}>
     <CardActionArea>
+      <Typography gutterBottom variant="h5" component="div">
+        {id}
+      </Typography>
       <Typography gutterBottom variant="h5" component="div">
         {title}
       </Typography>
