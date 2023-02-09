@@ -45,13 +45,13 @@ Caso o usuário escolha permanecer logado na tela de login, ele será automatica
 Clone o projeto:
 
 ```bash
-  git clone git@github.com:jjgouveia/health-desafio-desenvolvedor-junior-2.git
+  git clone git@github.com:jjgouveia/bloguify-reactjs.git
 ```
 
 Vá até a pasta do projeto:
 
 ```bash
-  cd health-desafio-desenvolvedor-junior-2
+  cd bloguify-reactjs
 ```
 
 📍 Instale as dependências do projeto:
