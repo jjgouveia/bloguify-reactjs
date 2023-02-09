@@ -4,6 +4,7 @@ import PostCardComponent from '../../components/CardComponent';
 import Header from '../../components/Header';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
+import { Slide } from "react-awesome-reveal";
 
 export default function HomeView () {
 
@@ -23,35 +24,42 @@ export default function HomeView () {
   return (
     <>
       <Header />
-      <Divider sx={{ marginTop: "2%" }}>
+      <Divider>
         <Chip label="Feed" />
       </Divider>
-      {
-        posts.length ? (
-          <section style={{ margin: '0 auto' }}>
-            {posts.map(({ id, title, body }) => (
-              <PostCardComponent
-                key={id}
-                id={id}
-                title={title}
-                body={body} />
-            ))}
-           <Divider variant="fullWidth" />
-            <Stack spacing={2}>
-              <Pagination
-                sx={{ margin: '0 auto', padding: '1rem .5em' }}
-                count={countPagination || 1}
-                page={actualPage}
-                onChange={handler}
-                variant="outlined"
-                color="primary"
-               />
-            </Stack>
-          </section>
-        ) : (
-          <Skeleton variant="rounded" sx={{ bgcolor: 'grey.50', margin: '0 auto', marginTop: '1rem' }} width={564} height={'100vh'} />
-        )
-      }
+      <Slide direction='left' triggerOnce={true} duration={1000} delay={400}>
+        {
+          posts.length ? (
+            <section style={{ margin: '0 auto' }}>
+              {posts.map(({ id, title, body }) => (
+                <PostCardComponent
+                  key={id}
+                  id={id}
+                  title={title}
+                  body={body} />
+              ))}
+              <Divider sx={{ paddingTop: "2%" }} variant="fullWidth" />
+              <Stack spacing={2}>
+                <Pagination
+                  sx={{ margin: '0 auto', padding: '1rem .5em' }}
+                  count={countPagination || 1}
+                  page={actualPage}
+                  onChange={handler}
+                  variant="outlined"
+                  color="primary"
+                />
+              </Stack>
+            </section>
+          ) : (
+            <Skeleton variant="rounded"
+              sx={{
+                bgcolor: 'grey.50',
+                margin: '0 auto',
+                marginTop: '1rem'
+              }} width={564} height={'100vh'} />
+          )
+        }
+      </Slide>
     </>
   )
 }

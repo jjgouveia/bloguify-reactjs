@@ -4,7 +4,9 @@ import React, { useEffect } from 'react'
 import Header from '../../components/Header';
 import UserCardComponent from '../../components/UserCardComponent';
 import usePagination from '../../hooks/usePagination';
-import usePosts from '../../hooks/usePosts'
+import usePosts from '../../hooks/usePosts';
+import { Slide } from "react-awesome-reveal";
+
 
 export default function UserView () {
 
@@ -28,11 +30,14 @@ export default function UserView () {
         <Chip label="Usuários" />
       </Divider>
       <Box component='section'>
-        <Box sx={{ minHeight: '70vh', marginTop: '4rem' }}>
+      <Slide cascade triggerOnce={ true } duration={ 1000 }>
+        <Box sx={{ minHeight: '62vh', marginTop: '4rem' }}>
         {posts.map((user) => (
        <UserCardComponent key={ user.id } user={ user }/>
         ))}
         </Box>
+        </Slide>
+        <Divider sx={{ paddingTop: "2%" }} variant="fullWidth" />
         <Stack spacing={2}>
           <Pagination
             sx={{ margin: '0 auto', padding: '1rem .5em' }}

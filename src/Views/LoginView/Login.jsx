@@ -13,6 +13,8 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import { Slide } from "react-awesome-reveal";
+
 
 function Copyright (props) {
   return (
@@ -91,12 +93,18 @@ export default function LoginView () {
                 style={{ width: '56px', height: '56px' }}>
               </lord-icon>
             </Avatar>
-            <Typography component="h1" variant="h5" sx={{ fontFamily: "Source Sans Pro", color: "#42A5F5", letterSpacing: 1 }}>
+            <Typography component="h1" variant="h5"
+            sx={{
+              fontFamily: "Source Sans Pro",
+              color: "#42A5F5",
+              letterSpacing: 1,
+              }}>
               Bloguify
             </Typography>
             <Typography component="h4" variant="h5" sx={{ fontFamily: "Source Sans Pro" }}>
               Seja quem você quiser ser
             </Typography>
+              <Slide direction="up">
             <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
               <TextField
                 error={Boolean(errors?.email)}
@@ -163,6 +171,7 @@ export default function LoginView () {
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+              </Slide>
           </Box>
         </Grid>
       </Grid>
