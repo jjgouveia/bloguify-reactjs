@@ -3,7 +3,6 @@ import './styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import logo from '../../assets/cafe.png';
-import { Slide } from "react-awesome-reveal";
 
 
 export default function Header () {
@@ -18,12 +17,10 @@ export default function Header () {
     <header>
       <div className='header-wrapper'>
         <Link to='/feed' style={{ textDecoration: 'none' }}>
-          <Slide direction='down' triggerOnce>
           <Box className='logo-container' sx={ styles.logoContainer }>
             <img src={ logo } alt="Logo do Bloguify" width={ 32 } />
             <Typography variant='h1' sx={ styles.title }>Bloguify</Typography>
           </Box>
-          </Slide>
         </Link>
         <Box sx={{ display: 'flex', flexDirection: 'row' }}>
           <Link to='/users' style={{ textDecoration: 'none' }}>
@@ -49,6 +46,7 @@ export default function Header () {
           </button>
         </Box>
       </div>
+
     </header>
   )
 };

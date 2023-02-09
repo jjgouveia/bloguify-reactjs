@@ -4,7 +4,7 @@ import PostCardComponent from '../../components/CardComponent';
 import Header from '../../components/Header';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
-import { Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 export default function HomeView () {
 
@@ -23,7 +23,9 @@ export default function HomeView () {
 
   return (
     <>
+    <Fade delay={ 700 } cascade triggerOnce>
       <Header />
+      </Fade>
       <Divider>
         <Chip label="Feed" />
       </Divider>
