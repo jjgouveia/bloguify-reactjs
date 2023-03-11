@@ -14,7 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { Slide } from "react-awesome-reveal";
-import { bgInfo } from './style';
+import style from './style';
 import Copyright from '../../components/Copyright';
 
 const theme = createTheme();
@@ -49,22 +49,11 @@ export default function LoginView () {
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }} color="#dadada">
         <CssBaseline />
-        <Grid
-          item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={ bgInfo }
+        <Grid item xs={false} sm={4} md={7} sx={ style.bgInfo }
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
-            sx={{
-              my: 8,
-              mx: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
+            sx={ style.loginContainer }
           >
             <Avatar sx={{ m: 1, bgcolor: '#fff', width: '62px', height: '62px' }}>
               <lord-icon
@@ -134,7 +123,7 @@ export default function LoginView () {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 2, mb: 2, backgroundColor: "#88abc2" }}
+                sx={ style.submitBtn }
               >
                 Acesse 🚪
               </Button>
