@@ -6,6 +6,7 @@ import UserCardComponent from '../../components/UserCardComponent';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts';
 import { Slide } from "react-awesome-reveal";
+import styles from './styles';
 
 
 export default function UserView () {
@@ -31,16 +32,16 @@ export default function UserView () {
       </Divider>
       <Box component='section'>
       <Slide cascade triggerOnce={ true } duration={ 1000 }>
-        <Box sx={{ minHeight: '62vh', marginTop: '4rem' }}>
+        <Box sx={ styles.infoContainer }>
         {posts.map((user) => (
        <UserCardComponent key={ user.id } user={ user }/>
         ))}
         </Box>
         </Slide>
-        <Divider sx={{ paddingTop: "2%" }} variant="fullWidth" />
+        <Divider sx={ styles.divider } variant="fullWidth" />
         <Stack spacing={2}>
           <Pagination
-            sx={{ margin: '0 auto', padding: '1rem .5em' }}
+            sx={ styles.paginator }
             count={countPagination}
             page={actualPage}
             onChange={handler}
