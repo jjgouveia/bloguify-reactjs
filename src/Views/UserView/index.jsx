@@ -41,7 +41,7 @@ export default function UserView () {
         <Stack spacing={2}>
           <Pagination
             sx={{ margin: '0 auto', padding: '1rem .5em' }}
-            count={countPagination || 1}
+            count={countPagination}
             page={actualPage}
             onChange={handler}
             variant="outlined"

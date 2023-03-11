@@ -14,20 +14,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import { Slide } from "react-awesome-reveal";
-
-
-function Copyright (props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://juniorgouveia.me/" target="_blank">
-        Meu Portifólio
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { bgInfo } from './style';
+import Copyright from '../../components/Copyright';
 
 const theme = createTheme();
 
@@ -66,14 +54,7 @@ export default function LoginView () {
           xs={false}
           sm={4}
           md={7}
-          sx={{
-            backgroundImage: 'url(https://source.unsplash.com/random)',
-            backgroundRepeat: 'no-repeat',
-            backgroundColor: (t) =>
-              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          sx={ bgInfo }
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
