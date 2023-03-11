@@ -3,6 +3,7 @@ import './styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import logo from '../../assets/cafe.png';
+import styles from './styles';
 
 
 export default function Header () {
@@ -51,25 +52,4 @@ export default function Header () {
   )
 };
 
-const styles = ({
-  title: {
-    fontSize: '32px',
-    paddingLeft: "10%",
-    fontFamily: "Source Sans Pro",
-    fontWeight: "bold",
-    color: "#42A5F5",
-    letterSpacing: 1,
-  },
 
-  logoContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: "5%",
-  },
-
-  lordIcon: {
-    width: "42px",
-    height: "42px",
-  }
-});

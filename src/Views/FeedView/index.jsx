@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import usePagination from '../../hooks/usePagination';
 import usePosts from '../../hooks/usePosts'
 import { Fade, Slide } from "react-awesome-reveal";
+import styles from './styles';
 
 export default function HomeView () {
 
@@ -23,8 +24,8 @@ export default function HomeView () {
 
   return (
     <>
-    <Fade delay={ 700 } cascade triggerOnce>
-      <Header />
+      <Fade delay={700} cascade triggerOnce>
+        <Header />
       </Fade>
       <Divider>
         <Chip label="Feed" />
@@ -32,7 +33,7 @@ export default function HomeView () {
       <Slide direction='left' triggerOnce={true} duration={1000} delay={400}>
         {
           posts.length ? (
-            <section style={{ margin: '0 auto' }}>
+            <section style={ styles.postContainer }>
               {posts.map(({ id, title, body }) => (
                 <PostCardComponent
                   key={id}
@@ -40,10 +41,10 @@ export default function HomeView () {
                   title={title}
                   body={body} />
               ))}
-              <Divider sx={{ paddingTop: "2%" }} variant="fullWidth" />
+              <Divider sx={ styles.divider } variant="fullWidth" />
               <Stack spacing={2}>
                 <Pagination
-                  sx={{ margin: '0 auto', padding: '1rem .5em' }}
+                  sx={styles.paginator}
                   count={countPagination || 1}
                   page={actualPage}
                   onChange={handler}
@@ -54,11 +55,7 @@ export default function HomeView () {
             </section>
           ) : (
             <Skeleton variant="rounded"
-              sx={{
-                bgcolor: 'grey.50',
-                margin: '0 auto',
-                marginTop: '1rem'
-              }} width={564} height={'100vh'} />
+              sx={styles.skeleton} width={564} height={'100vh'} />
           )
         }
       </Slide>
