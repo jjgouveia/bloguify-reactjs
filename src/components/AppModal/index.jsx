@@ -9,19 +9,9 @@ import PropTypes from 'prop-types';
 import { fetchById as getData } from '../../services/comments.services';
 import CommentCard from '../CommentCard';
 import UserCard from '../UserCard';
+import styles from './style';
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 360,
-    bgcolor: 'background.paper',
-    border: '1px solid #5b5b5b',
-    boxShadow: 24,
-    p: 4,
-    padding: '.5rem 1rem'
-};
+
 export default function AppModal (props) {
     const [open, setOpen] = useState(false);
     const [comments, setComments] = useState([]);
@@ -47,20 +37,21 @@ export default function AppModal (props) {
     }, [props.isUser]);
 
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+        <Box sx={styles.modalContainer}>
             {
-                !props.isUser ? (<Button onClick={handleOpen}>Comentários<lord-icon
-                    src="https://cdn.lordicon.com/flvisirw.json"
-                    trigger="hover"
-                    colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
-                    stroke="30"
-                    style={{ width: "38px", height: "38px" }}>
-                </lord-icon>
-                </Button>) :
+                !props.isUser ? (
+                    <Button onClick={handleOpen}>Comentários<lord-icon
+                        src="https://cdn.lordicon.com/flvisirw.json"
+                        trigger="hover"
+                        colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
+                        stroke="30"
+                        style={styles.commentIcon}>
+                    </lord-icon>
+                    </Button>) :
                     (<Button onClick={handleOpen}>Detalhes<lord-icon
                         src="https://cdn.lordicon.com/xzksbhzh.json"
                         trigger="hover"
-                        style={{ width: "38px", height: "38px" }}>
+                        style={styles.commentIcon}>
                     </lord-icon>
                     </Button>)
             }
@@ -82,17 +73,19 @@ export default function AppModal (props) {
                 state="morph"
             >
                 <Fade in={open}>
-                    <Box sx={style}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Box sx={styles.modal}>
+                        <Box sx={styles.container}>
                             {!props.isUser ?
                                 <>
                                     <Typography id="transition-modal-title" variant="h6" component="h2">
-                                        Comentários</Typography><lord-icon
-                                            src="https://cdn.lordicon.com/kjkiqtxg.json"
-                                            trigger="hover"
-                                            colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
-                                            stroke="30"
-                                            style={{ width: "48px", height: "48px" }}>
+                                        Comentários
+                                    </Typography>
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/kjkiqtxg.json"
+                                        trigger="hover"
+                                        colors="outline:#121331,primary:#646e78,secondary:#4bb3fd,tertiary:#ebe6ef"
+                                        stroke="30"
+                                        style={styles.icon}>
                                     </lord-icon>
                                 </>
                                 : <>
@@ -100,11 +93,11 @@ export default function AppModal (props) {
                                         Detalhes do usuário</Typography> <lord-icon
                                             src="https://cdn.lordicon.com/ckatldkn.json"
                                             trigger="hover"
-                                            style={{ width: "48px", height: "48px" }}>
+                                            style={styles.icon}>
                                     </lord-icon>
                                 </>}
                         </Box>
-                        <Box sx={{ maxHeight: '350px', overflowY: 'scroll' }}>
+                        <Box sx={styles.contentContainer}>
                             {!props.isUser ?
                                 (comments.map((comment) => (
                                     <CommentCard key={comment.id} comment={comment} />
