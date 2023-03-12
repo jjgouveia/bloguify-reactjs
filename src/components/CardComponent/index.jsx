@@ -2,13 +2,13 @@ import { Box, Card, CardActionArea, CardActions, Divider, Typography } from '@mu
 import React from 'react';
 import AppModal from '../AppModal';
 import PropTypes from 'prop-types';
-import styles from './style';
+import style from './styles';
 
 export default function PostCardComponent({ title, body, id }) {
   return (
-    <Card sx={ styles.container }>
+    <Card sx={ style.container }>
     <CardActionArea>
-      <Box sx={ styles.contentContainer }>
+      <Box sx={ style.contentContainer }>
       <Typography gutterBottom variant="h5" component="div">
         {id}
       </Typography>
@@ -18,7 +18,7 @@ export default function PostCardComponent({ title, body, id }) {
       <Typography variant="body2" component="p" color="text.secondary">
         {body}
       </Typography>
-      <Divider sx={ styles.divider } />
+      <Divider sx={ style.divider } />
       </Box>
     </CardActionArea>
     <CardActions>

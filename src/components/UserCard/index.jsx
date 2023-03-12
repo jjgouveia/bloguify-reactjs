@@ -2,6 +2,7 @@ import React from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Accordion, AccordionDetails, AccordionSummary, Avatar, Box, Card, CardContent, CardHeader, Grid, Paper, styled, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
+import style from './styles';
 
 export default function UserCard ({ user, expanded, handleChange }) {
 
@@ -14,10 +15,10 @@ export default function UserCard ({ user, expanded, handleChange }) {
     }));
 
     return (
-        <Card key={user.id} component="div" sx={{ maxWidth: 360, marginTop: '.5rem' }}>
-            <CardHeader sx={{ display: 'flex', flexDirection: 'column' }}
+        <Card key={user.id} component="div" sx={ style.container }>
+            <CardHeader sx={ style.cardContainer }
                 avatar={
-                    <Avatar sx={{ bgcolor: '#7070F4' }} aria-label="user">
+                    <Avatar sx={ style.avatarColor } aria-label="user">
                         {user.name[0].toUpperCase()}
                     </Avatar>
                 }
@@ -31,13 +32,13 @@ export default function UserCard ({ user, expanded, handleChange }) {
                         aria-controls="panel1bh-content"
                         id="panel1bh-header"
                     >
-                        <Typography sx={{ width: '80%', flexShrink: 0 }}>
+                        <Typography sx={ style.cardHeader }>
                             Informações de contato
                         </Typography>
-                        <Typography sx={{ color: 'text.primary' }}>📒</Typography>
+                        <Typography sx={ style.cardColor }>📒</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{ bgcolor: '#efefef' }}>
-                        <Box sx={{ flexGrow: 1 }}>
+                    <AccordionDetails sx={ style.cardAccordionColor }>
+                        <Box sx={ style.accordionContainer }>
                             <Grid container spacing={2}>
                                 <Grid item xs={12} sx={{ textAlign: 'center' }}>
                                     <Item>{user?.email}</Item>
@@ -58,13 +59,13 @@ export default function UserCard ({ user, expanded, handleChange }) {
                         aria-controls="panel2bh-content"
                         id="panel2bh-header"
                     >
-                        <Typography sx={{ width: '80%', flexShrink: 0 }}>
+                        <Typography sx={ style.cardHeader }>
                             Informações de endereço
                         </Typography>
-                        <Typography sx={{ color: 'text.primary' }}>🏡</Typography>
+                        <Typography sx={ style.cardColor }>🏡</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{ bgcolor: '#efefef' }}>
-                        <Box sx={{ flexGrow: 1 }}>
+                    <AccordionDetails sx={ style.cardAccordionColor }>
+                        <Box sx={ style.accordionContainer }>
                             <Grid container spacing={2}>
                                 <Grid item xs={6}>
                                     <Item>Rua: {user?.address.street}</Item>
@@ -88,11 +89,11 @@ export default function UserCard ({ user, expanded, handleChange }) {
                         aria-controls="panel3bh-content"
                         id="panel3bh-header"
                     >
-                        <Typography sx={{ width: '80%', flexShrink: 0 }}>Informações de emprego</Typography>
-                        <Typography sx={{ color: 'text.primary' }}>🏢</Typography>
+                        <Typography sx={ style.cardHeader }>Informações de emprego</Typography>
+                        <Typography sx={ style.cardColor }>🏢</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{ bgcolor: '#efefef' }}>
-                        <Box sx={{ flexGrow: 1 }}>
+                    <AccordionDetails sx={ style.cardAccordionColor }>
+                        <Box sx={ style.accordionContainer }>
                             <Grid container spacing={2}>
                                 <Grid item xs={12}>
                                     <Item>Empresa: {user.company.name}</Item>

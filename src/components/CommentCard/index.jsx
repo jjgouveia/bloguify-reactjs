@@ -1,16 +1,16 @@
 import { Avatar, Card, CardContent, CardHeader, Typography } from '@mui/material';
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style';
+import style from './styles';
 
 export default function CommentCard ({ comment }) {
     return (
         <Card key={comment.id} component="div"
-            sx={styles.container}>
+            sx={style.container}>
             <CardHeader
-                sx={styles.cardHeaderColor}
+                sx={style.cardHeaderColor}
                 avatar={
-                    <Avatar sx={styles.avatarColor} aria-label="user">
+                    <Avatar sx={style.avatarColor} aria-label="user">
                         {comment.name[0].toUpperCase()}
                     </Avatar>
                 }
